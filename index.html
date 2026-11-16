@@ -29,26 +29,37 @@
     }
     h1 {
       font-size: 2rem;
-      margin-bottom: 0.25rem;
+      margin-bottom: 2rem;
     }
-    p.tagline {
-      color: var(--muted);
-      margin-top: 0;
+    ul.roster {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
     }
-    a { color: var(--accent); }
-    footer {
+    ul.roster li {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--muted);
+      padding-bottom: 0.5rem;
+    }
+    ul.roster .instrument {
       color: var(--muted);
-      font-size: 0.85rem;
-      margin-top: 3rem;
     }
   </style>
 </head>
 <body>
   <main>
     <h1>Cascadia Winds</h1>
-    <p class="tagline">This site is under construction.</p>
-    <p>Content is on its way — check back soon.</p>
-    <footer>&copy; 2026 Cascadia Winds</footer>
+    <ul class="roster">
+      <li><span>Zachary</span><span class="instrument">Flute</span></li>
+      <li><span>Laura</span><span class="instrument">Oboe</span></li>
+      <li><span>Noah</span><span class="instrument">Clarinet</span></li>
+      <li><span>Sam</span><span class="instrument">Bassoon</span></li>
+      <li><span>Zach</span><span class="instrument">Horn</span></li>
+    </ul>
   </main>
 </body>
 </html>
