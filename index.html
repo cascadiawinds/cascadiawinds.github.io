@@ -93,6 +93,56 @@
       font-size: 0.9rem;
       color: #d7e8e0;
     }
+    .recordings {
+      margin-top: 4.5rem;
+    }
+    .recordings h2 {
+      margin: 0 0 1.75rem;
+      font-family: "Fraunces", Georgia, serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 1.7rem;
+    }
+    ul.tracklist {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+    ul.tracklist li {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .piece {
+      margin-bottom: 2.75rem;
+    }
+    .piece:last-child {
+      margin-bottom: 0;
+    }
+    .piece-title {
+      margin: 0;
+      font-family: "Fraunces", Georgia, serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 1.2rem;
+    }
+    .piece-meta {
+      margin: 0.35rem 0 1.25rem;
+      font-size: 0.85rem;
+      color: #d7e8e0;
+    }
+    .movement {
+      display: block;
+      margin-bottom: 0.45rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    audio {
+      width: 100%;
+    }
   </style>
 </head>
 <body>
@@ -118,6 +168,48 @@
       <li><span class="name">Sam</span><span class="instrument">Bassoon</span></li>
       <li><span class="name">Zach</span><span class="instrument">Horn</span></li>
     </ul>
+
+    <section class="recordings">
+      <h2>Recordings</h2>
+
+      <article class="piece">
+        <h3 class="piece-title">Dance Suite for Woodwind Quintet</h3>
+        <p class="piece-meta">Paul Valjean (1935&ndash;1992) &middot; 1955 &middot; approx. 10 min</p>
+        <ul class="tracklist">
+          <li>
+            <span class="movement">I. Gavotte</span>
+            <audio controls src="audio/valjean-1-gavotte.m4a"></audio>
+          </li>
+          <li>
+            <span class="movement">II. Sarabande</span>
+            <audio controls src="audio/valjean-2-sarabande.m4a"></audio>
+          </li>
+          <li>
+            <span class="movement">III. Tango</span>
+            <audio controls src="audio/valjean-3-tango.m4a"></audio>
+          </li>
+          <li>
+            <span class="movement">IV. Pas de Deux</span>
+            <audio controls src="audio/valjean-4-pasdedeux.m4a"></audio>
+          </li>
+          <li>
+            <span class="movement">V. Waltz</span>
+            <audio controls src="audio/valjean-5-waltz.m4a"></audio>
+          </li>
+        </ul>
+      </article>
+
+      <article class="piece">
+        <h3 class="piece-title">Wind Quintet No. 2 in D minor</h3>
+        <p class="piece-meta">Giuseppe Maria Cambini (1746&ndash;1825) &middot; c. 1802</p>
+        <ul class="tracklist">
+          <li>
+            <span class="movement">I. Allegro espressivo</span>
+            <audio controls src="audio/cambini-2-1.m4a"></audio>
+          </li>
+        </ul>
+      </article>
+    </section>
   </main>
 </body>
 </html>
