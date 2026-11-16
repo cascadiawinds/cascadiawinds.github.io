@@ -4,32 +4,65 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cascadia Winds</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@1,500&family=Archivo:wght@400;600&display=swap">
   <style>
-    :root {
-      color-scheme: light dark;
-      --bg: #fafaf8;
-      --fg: #1a1a1a;
-      --accent: #2a6f77;
-      --muted: #5a5a5a;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root { --bg: #14181a; --fg: #eaeaea; --muted: #a0a0a0; --accent: #6fc2cc; }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background: #142720;
     }
     body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--fg);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      line-height: 1.6;
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: #f4f8f5;
+      font-family: "Archivo", Helvetica, Arial, sans-serif;
+      background: linear-gradient(180deg, #6f9485 0%, #4a715f 28%, #30503f 60%, #142720 100%);
+    }
+    .ridge {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 46vh;
+      z-index: 0;
     }
     main {
+      position: relative;
+      z-index: 1;
       max-width: 640px;
       margin: 0 auto;
-      padding: 4rem 1.5rem 6rem;
+      padding: 4.5rem 1.5rem 7rem;
+    }
+    .title-wrap {
+      position: relative;
+      margin-bottom: 3rem;
+    }
+    .staff {
+      position: absolute;
+      top: 50%;
+      left: -1.5rem;
+      right: -1.5rem;
+      height: 4.6rem;
+      transform: translateY(-50%);
+      z-index: 0;
+    }
+    .staff line {
+      stroke: #ffffff;
+      stroke-opacity: 0.3;
+      stroke-width: 1;
     }
     h1 {
-      font-size: 2rem;
-      margin-bottom: 2rem;
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      font-family: "Fraunces", Georgia, serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(2.4rem, 7vw, 3.6rem);
+      line-height: 1.05;
+      text-wrap: balance;
     }
     ul.roster {
       list-style: none;
@@ -37,28 +70,53 @@
       padding: 0;
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 0.6rem;
     }
     ul.roster li {
       display: flex;
-      justify-content: space-between;
-      border-bottom: 1px solid var(--muted);
-      padding-bottom: 0.5rem;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    ul.roster li::before {
+      content: "";
+      width: 14px;
+      height: 2px;
+      background: #d98a3d;
+      flex: 0 0 auto;
+    }
+    ul.roster .name {
+      font-weight: 600;
+      font-size: 1.05rem;
     }
     ul.roster .instrument {
-      color: var(--muted);
+      margin-left: auto;
+      font-size: 0.9rem;
+      color: #d7e8e0;
     }
   </style>
 </head>
 <body>
+  <svg class="ridge" viewBox="0 0 600 280" preserveAspectRatio="none" aria-hidden="true">
+    <polygon points="0,280 0,160 95,110 190,155 285,85 380,145 460,70 540,150 600,100 600,280" fill="#1c3327" opacity="0.9"></polygon>
+    <polygon points="0,280 0,205 120,165 230,195 340,140 430,180 520,150 600,190 600,280" fill="#122520" opacity="0.95"></polygon>
+  </svg>
   <main>
-    <h1>Cascadia Winds</h1>
+    <div class="title-wrap">
+      <svg class="staff" viewBox="0 0 600 74" preserveAspectRatio="none" aria-hidden="true">
+        <line x1="0" y1="8" x2="600" y2="8"></line>
+        <line x1="0" y1="26" x2="600" y2="26"></line>
+        <line x1="0" y1="44" x2="600" y2="44"></line>
+        <line x1="0" y1="62" x2="600" y2="62"></line>
+        <line x1="0" y1="74" x2="600" y2="74"></line>
+      </svg>
+      <h1>Cascadia Winds</h1>
+    </div>
     <ul class="roster">
-      <li><span>Zachary</span><span class="instrument">Flute</span></li>
-      <li><span>Laura</span><span class="instrument">Oboe</span></li>
-      <li><span>Noah</span><span class="instrument">Clarinet</span></li>
-      <li><span>Sam</span><span class="instrument">Bassoon</span></li>
-      <li><span>Zach</span><span class="instrument">Horn</span></li>
+      <li><span class="name">Zachary</span><span class="instrument">Flute</span></li>
+      <li><span class="name">Laura</span><span class="instrument">Oboe</span></li>
+      <li><span class="name">Noah</span><span class="instrument">Clarinet</span></li>
+      <li><span class="name">Sam</span><span class="instrument">Bassoon</span></li>
+      <li><span class="name">Zach</span><span class="instrument">Horn</span></li>
     </ul>
   </main>
 </body>
